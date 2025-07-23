@@ -130,6 +130,10 @@ Chatapp/
 └── docker-compose.yml  # Containers for Kafka, Redis, MongoDB
 ```
 
+
+https://github.com/user-attachments/assets/c946675c-75a0-4e47-864c-5e609f5903cf
+
+
 ---
 
 
