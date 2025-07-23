@@ -141,6 +141,20 @@ https://github.com/user-attachments/assets/94d5b9e7-4d3a-46e5-bdd5-5a32ea5c295a
 
 
 
+## 🧠 Architecture Flow
+
+```mermaid
+graph TD
+  Frontend["Frontend<br>(HTML / CSS / JS + Socket.IO Client)"] --> Express["Express.js Server"]
+  Express --> SocketServer["Socket.IO Server"]
+  SocketServer --> KafkaProducer["Kafka Producer"]
+  KafkaProducer --> KafkaBroker["Kafka Broker"]
+  KafkaBroker --> KafkaConsumer["Kafka Consumer"]
+  KafkaConsumer --> SocketServer
+  KafkaBroker --> Redis["Redis (Optional - Pub/Sub Scaling)"]
+```
+
+---
 
 
 
