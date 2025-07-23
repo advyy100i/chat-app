@@ -145,13 +145,22 @@ https://github.com/user-attachments/assets/94d5b9e7-4d3a-46e5-bdd5-5a32ea5c295a
 
 ```mermaid
 graph TD
-  Frontend["Frontend<br>(HTML / CSS / JS + Socket.IO Client)"] --> Express["Express.js Server"]
-  Express --> SocketServer["Socket.IO Server"]
+  Frontend["Frontend<br>(HTML / CSS / JS + Socket.IO Client + JWT Auth)"]
+  Frontend -->|Login/Register| Auth["Auth API<br>(Express.js + JWT)"]
+  Frontend -->|Real-time Chat| SocketClient["Socket.IO Client"]
+
+  Auth --> MongoDB1["MongoDB<br>(User Data)"]
+
+  SocketClient --> SocketServer["Socket.IO Server<br>(Express.js Backend)"]
+  SocketServer -->|Typing Status| Redis["Redis<br>(Typing Status Pub/Sub)"]
   SocketServer --> KafkaProducer["Kafka Producer"]
   KafkaProducer --> KafkaBroker["Kafka Broker"]
   KafkaBroker --> KafkaConsumer["Kafka Consumer"]
   KafkaConsumer --> SocketServer
-  KafkaBroker --> Redis["Redis (Optional - Pub/Sub Scaling)"]
+  KafkaConsumer --> MongoDB2["MongoDB<br>(Message Storage)"]
+
+
+
 ```
 
 ---
