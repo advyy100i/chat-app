@@ -106,16 +106,11 @@ Open `client/index.html` in your browser.
 ```
 Chatapp/
 │
-├── client/             # Frontend HTML/CSS/JS files
-
-https://github.com/user-attachments/assets/c265f323-156e-4864-b99a-665c127117a3
-
-
-
-https://github.com/user-attachments/assets/94d5b9e7-4d3a-46e5-bdd5-5a32ea5c295a
-
-
-│
+├── client/            # Frontend HTML/CSS/JS files
+│   ├──auth.html
+|   ├──index.html
+|   ├──main.js
+|   ├──style.css
 ├── server/
 │   ├── kafka/
 │   │   ├── producer.js
