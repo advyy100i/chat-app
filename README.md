@@ -110,7 +110,8 @@ Chatapp/
 │   ├──auth.html
 |   ├──index.html
 |   ├──main.js
-|   ├──style.css
+|   └── style.css
+|
 ├── server/
 │   ├── kafka/
 │   │   ├── producer.js
